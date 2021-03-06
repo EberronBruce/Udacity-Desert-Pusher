@@ -1,3 +1,5 @@
+
+
 ///*
 // * Copyright 2018, The Android Open Source Project
 // *
@@ -14,11 +16,13 @@
 // * limitations under the License.
 // */
 //
-//package com.example.android.dessertpusher
-//
-//import android.os.Handler
-//import timber.log.Timber
-//
+package com.example.android.dessertpusher
+
+import android.os.Handler
+import android.os.Looper
+import timber.log.Timber
+
+
 ///**
 // * This is a class representing a timer that you can start or stop. The secondsCount outputs a count of
 // * how many seconds since it started, every one second.
@@ -34,7 +38,7 @@
 // * https://developer.android.com/guide/components/processes-and-threads
 // *
 // */
-/*class DessertTimer {
+class DessertTimer {
 
     // The number of seconds counted since the timer started
     var secondsCount = 0
@@ -43,7 +47,7 @@
      * [Handler] is a class meant to process a queue of messages (known as [android.os.Message]s)
      * or actions (known as [Runnable]s)
      */
-    private var handler = Handler()
+    private var handler = Handler(Looper.getMainLooper())
     private lateinit var runnable: Runnable
 
 
@@ -70,4 +74,4 @@
         // timer
         handler.removeCallbacks(runnable)
     }
-}*/
+}
